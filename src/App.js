@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
+import FormValidation from "./components/FormValidation";
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
           <div></div>
         </div>
       </section> */}
+
+      <FormValidation />
 
       <Routes>
         <Route path="/" element={<Home />} />
