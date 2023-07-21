@@ -35,7 +35,7 @@ export default function About() {
 
   return (
     <>
-      <h2>This is About Page</h2>
+      <h2>Pagination Implemented</h2>
 
       {records.map((d) => (
         <div key={d.id}>
