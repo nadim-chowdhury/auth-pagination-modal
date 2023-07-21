@@ -8,7 +8,8 @@ export default function () {
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => setrData(res.data));
+      .then((res) => setrData(res.data))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const handleDragEnd = (result) => {
@@ -26,7 +27,7 @@ export default function () {
   return (
     <>
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="droppable1">
+        <Droppable droppableId="dropabble">
           {(provided) => (
             <div ref={provided.innerRef} {...provided.droppableProps}>
               {rData.map((d, i) => (
