@@ -11,7 +11,7 @@ export default function FormValidation() {
 
   const onSubmit = (data) => {
     setUserInfo(data);
-    console.log(userInfo);
+    console.log(data);
   };
 
   return (
@@ -31,7 +31,7 @@ export default function FormValidation() {
             },
           })}
         />
-        {errors.name && errors.name.message}
+        <p className="text-danger mt-2">{errors.name && errors.name.message}</p>
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">
@@ -40,14 +40,17 @@ export default function FormValidation() {
         <input
           type="email"
           className="form-control"
-          {...register("name", {
+          {...register("email", {
             required: "Required",
             pattern: {
-              value: "",
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: "Invalid Email",
             },
           })}
         />
+        <p className="text-danger mt-2">
+          {errors.email && errors.email.message}
+        </p>
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputPassword1" className="form-label">
@@ -56,14 +59,25 @@ export default function FormValidation() {
         <input
           type="password"
           className="form-control"
-          {...register("name", {
+          {...register("password", {
             required: "Required",
             pattern: {
               value: "",
               message: "Invalid Password",
             },
+            minLength: {
+              value: 4,
+              message: "Password Length Must Be 4 Charecters at Least",
+            },
+            maxLength: {
+              value: 8,
+              message: "Password Length Should be max 8 charecters",
+            },
           })}
         />
+        <p className="text-danger mt-2">
+          {errors.password && errors.password.message}
+        </p>
       </div>
       <div className="mb-3 form-check">
         <input type="checkbox" className="form-check-input" />
