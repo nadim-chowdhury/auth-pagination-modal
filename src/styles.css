@@ -7,7 +7,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f2f2f2;
+  background: #f1f1f1;
   padding: 0 10px 0 10px;
 }
 
@@ -16,13 +16,13 @@ nav a {
 }
 
 h2 {
-  background-color: #f2f2f2;
+  background-color: #f1f1f1;
   padding: 40px;
   text-align: center;
 }
 
 .user {
-  background: #f2f2f2;
+  background: #f1f1f1;
 }
 
 .lds-ripple {

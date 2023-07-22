@@ -29,7 +29,7 @@ export default function Home() {
     };
 
     return (
-      <div>
+      <div className="mx-4">
         {currentItems.map(
           (
             d // Fix: Use 'currentItems' instead of 'items'
